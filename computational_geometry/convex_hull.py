@@ -4,39 +4,6 @@ import operator
 from math import atan2
 
 
-class Point:
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
-
-    def angle(self, other):
-        dx = self.x - other.x
-        dy = self.x - other.y
-        return atan2(dy, dx)
-
-    def distance(self, other):
-        """Return the Euclidian distance between two points."""
-        dx = self.x - other.x
-        dy = self.x - other.y
-        return (dx ** 2 + dy ** 2) ** 0.5
-
-    def determinant(self, other1, other2):
-        """Return the determinant of the triangle defined by three points.
-
-        If the determinant is:
-
-            Positive: Counter-clockwise turn
-            Negative: Clock-wise turn
-            zero: All three points are on a straight line
-        """
-        x0, y0 = self.x, self.y
-        x1, y1 = other1.x, other1.y
-        x2, y2 = other2.x, other2.y
-
-        # Compute determinant
-        return (x1 - x0) * (y2 - y0) - (y1 - y0) * (x2 - x0)
-
-
 def angle(point0, point1):
     """Return the angle between two points."""
 
@@ -89,55 +56,3 @@ def convex_hull_graham_scan(
         hull.append(point)
 
     return hull
-
-
-def is_convex(*points):
-    """Return 'True' if polygon is convex, otherwise 'False'"""
-    pass
-
-
-if __name__ == "__main__":
-
-    import numpy as np
-
-    points = list(np.random.random((100, 2)))
-
-    for x, y in points:
-        print(f"({x:.4F}, {y:.4F})")
-
-    # for point in points:
-    #     print(point)
-
-    # points = [
-    #     (3, 3.0),
-    #     (6, 3.5),
-    #     (5, 7.7),
-    #     (8, 5),  #
-    #     (4.9, 7.7),
-    #     (6, 3.9),
-    #     (4.8, 7.9),
-    #     (-2, 2),  #
-    #     (3, 7),
-    #     (5, -10),  # Anchor
-    #     (4, 15),  #
-    # ]
-
-    hull = convex_hull(points)
-    print("\n\n")
-    for x, y in hull:
-        print(f"({x:.4F}, {y:.4F})")
-
-    # Class definition
-    # points = [Point(x, y) for x, y in points]
-    # p = Point(12, 42)
-    # print(p[0])
-
-    import matplotlib.pyplot as plt
-
-    xp, yp = zip(*points)
-    xh, yh = zip(*hull)
-    plt.plot(xp, yp, "r.")
-    plt.plot(xh, yh, "g-")
-    plt.show()
-
-    # hull = convex_hull(points)
