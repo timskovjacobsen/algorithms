@@ -1,6 +1,6 @@
-# Computational geometry algorithms
+# Algorithms
 
-This repository contains various computational geometry algorithms. For now, only Python code is used.
+Repository for various algorithms. For now, only Python code is used.
 
 The two primary purposes of the reposoory are:
 
@@ -12,6 +12,8 @@ Because of point 2, the algorithms must not have any external dependencies thems
 > Note that `numpy` is used in this repository only for testing the correctness of some of the algorithms, but not used in the algorihtms themselves.
 
 ## Available algororithms
+
+### Computational geometry
 
 * [Convex Hull](computational_geometry/convex_hull.py) (Graham Scan algorithm)
 * [Move Point Towards Other Point](/computational_geometry/points.py)
