@@ -2,7 +2,7 @@
 
 Repository for various algorithms. For now, only Python code is used.
 
-The two primary purposes of the reposoory are:
+The two primary purposes of the repository are:
 
 1. To explain how the algorithms work
 2. To provide small code chucks that can be used in projects without bringing on heavy dependencies
