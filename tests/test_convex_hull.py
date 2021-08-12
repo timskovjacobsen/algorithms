@@ -9,9 +9,14 @@ def test_convex_hull_graham_scan():
     # Done by parametrization
 
     # ----- Execute -----
-    actual = convex_hull_graham_scan(points_1)
+    hull = convex_hull_graham_scan(points_1)
 
-    expected = hull_1
+    actual_x = [p.x for p in hull]
+    actual_y = [p.y for p in hull]
+
+    expected_x = [p.x for p in hull_1]
+    expected_y = [p.y for p in hull_1]
 
     # ----- Verify -----
-    assert_array_almost_equal(actual, expected)
+    assert_array_almost_equal(actual_x, expected_x)
+    assert_array_almost_equal(actual_y, expected_y)
